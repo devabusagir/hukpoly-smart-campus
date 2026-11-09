@@ -14,16 +14,524 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      academic_sessions: {
+        Row: {
+          created_at: string
+          ends_on: string | null
+          id: string
+          is_demo: boolean
+          name: string
+          starts_on: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          ends_on?: string | null
+          id?: string
+          is_demo?: boolean
+          name: string
+          starts_on?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          ends_on?: string | null
+          id?: string
+          is_demo?: boolean
+          name?: string
+          starts_on?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      announcements: {
+        Row: {
+          audience: string
+          body: string
+          created_at: string
+          created_by: string | null
+          expires_at: string | null
+          id: string
+          is_demo: boolean
+          published_at: string | null
+          publisher_name: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          audience?: string
+          body: string
+          created_at?: string
+          created_by?: string | null
+          expires_at?: string | null
+          id?: string
+          is_demo?: boolean
+          published_at?: string | null
+          publisher_name?: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          audience?: string
+          body?: string
+          created_at?: string
+          created_by?: string | null
+          expires_at?: string | null
+          id?: string
+          is_demo?: boolean
+          published_at?: string | null
+          publisher_name?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      approval_tasks: {
+        Row: {
+          area: string
+          assigned_to: string | null
+          created_at: string
+          created_by: string | null
+          description: string | null
+          due_at: string | null
+          id: string
+          is_demo: boolean
+          priority: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          area?: string
+          assigned_to?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          due_at?: string | null
+          id?: string
+          is_demo?: boolean
+          priority?: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          area?: string
+          assigned_to?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          due_at?: string | null
+          id?: string
+          is_demo?: boolean
+          priority?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      audit_logs: {
+        Row: {
+          action: string
+          actor_user_id: string | null
+          created_at: string
+          entity_id: string | null
+          entity_type: string
+          id: string
+          summary: string
+        }
+        Insert: {
+          action: string
+          actor_user_id?: string | null
+          created_at?: string
+          entity_id?: string | null
+          entity_type: string
+          id?: string
+          summary: string
+        }
+        Update: {
+          action?: string
+          actor_user_id?: string | null
+          created_at?: string
+          entity_id?: string | null
+          entity_type?: string
+          id?: string
+          summary?: string
+        }
+        Relationships: []
+      }
+      campuses: {
+        Row: {
+          address: string | null
+          code: string
+          created_at: string
+          id: string
+          is_demo: boolean
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          code: string
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          code?: string
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      departments: {
+        Row: {
+          code: string
+          created_at: string
+          id: string
+          is_demo: boolean
+          name: string
+          school_id: string
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          name: string
+          school_id: string
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          name?: string
+          school_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "departments_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      notifications: {
+        Row: {
+          body: string
+          category: string
+          created_at: string
+          id: string
+          read_at: string | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          body: string
+          category?: string
+          created_at?: string
+          id?: string
+          read_at?: string | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          body?: string
+          category?: string
+          created_at?: string
+          id?: string
+          read_at?: string | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          email: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string
+          email?: string
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          email?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      programmes: {
+        Row: {
+          code: string
+          created_at: string
+          department_id: string
+          id: string
+          is_demo: boolean
+          name: string
+          qualification: string
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          department_id: string
+          id?: string
+          is_demo?: boolean
+          name: string
+          qualification?: string
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          department_id?: string
+          id?: string
+          is_demo?: boolean
+          name?: string
+          qualification?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "programmes_department_id_fkey"
+            columns: ["department_id"]
+            isOneToOne: false
+            referencedRelation: "departments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schools: {
+        Row: {
+          campus_id: string
+          code: string
+          created_at: string
+          id: string
+          is_demo: boolean
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          campus_id: string
+          code: string
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          campus_id?: string
+          code?: string
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          name?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "schools_campus_id_fkey"
+            columns: ["campus_id"]
+            isOneToOne: false
+            referencedRelation: "campuses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      staff_records: {
+        Row: {
+          auth_user_id: string | null
+          created_at: string
+          department_id: string | null
+          employee_number: string | null
+          employment_status: string
+          full_name: string
+          id: string
+          is_demo: boolean
+          title: string | null
+          updated_at: string
+        }
+        Insert: {
+          auth_user_id?: string | null
+          created_at?: string
+          department_id?: string | null
+          employee_number?: string | null
+          employment_status?: string
+          full_name: string
+          id?: string
+          is_demo?: boolean
+          title?: string | null
+          updated_at?: string
+        }
+        Update: {
+          auth_user_id?: string | null
+          created_at?: string
+          department_id?: string | null
+          employee_number?: string | null
+          employment_status?: string
+          full_name?: string
+          id?: string
+          is_demo?: boolean
+          title?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "staff_records_department_id_fkey"
+            columns: ["department_id"]
+            isOneToOne: false
+            referencedRelation: "departments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      student_records: {
+        Row: {
+          academic_level: string | null
+          admission_year: number | null
+          application_number: string | null
+          auth_user_id: string | null
+          created_at: string
+          full_name: string
+          id: string
+          is_demo: boolean
+          programme_id: string | null
+          status: string
+          student_number: string | null
+          updated_at: string
+        }
+        Insert: {
+          academic_level?: string | null
+          admission_year?: number | null
+          application_number?: string | null
+          auth_user_id?: string | null
+          created_at?: string
+          full_name: string
+          id?: string
+          is_demo?: boolean
+          programme_id?: string | null
+          status?: string
+          student_number?: string | null
+          updated_at?: string
+        }
+        Update: {
+          academic_level?: string | null
+          admission_year?: number | null
+          application_number?: string | null
+          auth_user_id?: string | null
+          created_at?: string
+          full_name?: string
+          id?: string
+          is_demo?: boolean
+          programme_id?: string | null
+          status?: string
+          student_number?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "student_records_programme_id_fkey"
+            columns: ["programme_id"]
+            isOneToOne: false
+            referencedRelation: "programmes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["user_role"]
+          scope_id: string | null
+          scope_type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["user_role"]
+          scope_id?: string | null
+          scope_type?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["user_role"]
+          scope_id?: string | null
+          scope_type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["user_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      user_role:
+        | "super_admin"
+        | "rector"
+        | "executive_management"
+        | "registrar"
+        | "deputy_registrar"
+        | "bursar"
+        | "academic_affairs_officer"
+        | "ict_administrator"
+        | "dean"
+        | "head_of_department"
+        | "lecturer"
+        | "examination_officer"
+        | "registry_officer"
+        | "finance_officer"
+        | "library_officer"
+        | "hostel_officer"
+        | "student_affairs_officer"
+        | "siwes_coordinator"
+        | "quality_assurance_officer"
+        | "student"
+        | "applicant"
+        | "alumni"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +658,31 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: [
+        "super_admin",
+        "rector",
+        "executive_management",
+        "registrar",
+        "deputy_registrar",
+        "bursar",
+        "academic_affairs_officer",
+        "ict_administrator",
+        "dean",
+        "head_of_department",
+        "lecturer",
+        "examination_officer",
+        "registry_officer",
+        "finance_officer",
+        "library_officer",
+        "hostel_officer",
+        "student_affairs_officer",
+        "siwes_coordinator",
+        "quality_assurance_officer",
+        "student",
+        "applicant",
+        "alumni",
+      ],
+    },
   },
 } as const
