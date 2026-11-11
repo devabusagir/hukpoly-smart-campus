@@ -47,6 +47,48 @@ export type Database = {
         }
         Relationships: []
       }
+      access_requests: {
+        Row: {
+          created_at: string
+          id: string
+          justification: string
+          requested_role: Database["public"]["Enums"]["user_role"]
+          reviewed_at: string | null
+          reviewed_by: string | null
+          scope_id: string | null
+          scope_type: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          justification: string
+          requested_role: Database["public"]["Enums"]["user_role"]
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          scope_id?: string | null
+          scope_type?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          justification?: string
+          requested_role?: Database["public"]["Enums"]["user_role"]
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          scope_id?: string | null
+          scope_type?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       announcements: {
         Row: {
           audience: string
@@ -503,6 +545,15 @@ export type Database = {
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["user_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      has_scoped_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["user_role"]
+          _scope_id: string
+          _scope_type: string
           _user_id: string
         }
         Returns: boolean

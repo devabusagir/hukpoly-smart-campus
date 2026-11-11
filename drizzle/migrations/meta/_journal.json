@@ -8,6 +8,34 @@
       "when": 1794237304575,
       "tag": "0000_phase1_institutional_foundation",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794397023759,
+      "tag": "0001_scope_role_access",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794397065500,
+      "tag": "0002_demo_visibility_and_notice_scope",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1794397121677,
+      "tag": "0003_immutable_institutional_audit_trail",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794397154641,
+      "tag": "0004_institutional_role_management",
+      "breakpoints": true
     }
   ]
 }
