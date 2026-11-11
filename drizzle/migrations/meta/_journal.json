@@ -29,6 +29,13 @@
       "when": 1794397121677,
       "tag": "0003_immutable_institutional_audit_trail",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794397154641,
+      "tag": "0004_institutional_role_management",
+      "breakpoints": true
     }
   ]
 }
