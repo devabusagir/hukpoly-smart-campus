@@ -8,6 +8,13 @@
       "when": 1794237304575,
       "tag": "0000_phase1_institutional_foundation",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794397023759,
+      "tag": "0001_scope_role_access",
+      "breakpoints": true
     }
   ]
 }

@@ -507,6 +507,15 @@ export type Database = {
         }
         Returns: boolean
       }
+      has_scoped_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["user_role"]
+          _scope_id: string
+          _scope_type: string
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       user_role:
