@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep campus domain operations in focused client-safe `src/lib/*.functions.ts` modules and reusable UI in `src/components`; place protected pages under `_authenticated` and enforce record access in database policies because route visibility alone is not security.
