@@ -15,6 +15,13 @@
       "when": 1794397023759,
       "tag": "0001_scope_role_access",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794397065500,
+      "tag": "0002_demo_visibility_and_notice_scope",
+      "breakpoints": true
     }
   ]
 }
