@@ -101,6 +101,8 @@ export type Database = {
           published_at: string | null
           publisher_name: string
           status: string
+          target_scope_id: string | null
+          target_scope_type: string | null
           title: string
           updated_at: string
         }
@@ -115,6 +117,8 @@ export type Database = {
           published_at?: string | null
           publisher_name?: string
           status?: string
+          target_scope_id?: string | null
+          target_scope_type?: string | null
           title: string
           updated_at?: string
         }
@@ -129,6 +133,8 @@ export type Database = {
           published_at?: string | null
           publisher_name?: string
           status?: string
+          target_scope_id?: string | null
+          target_scope_type?: string | null
           title?: string
           updated_at?: string
         }
